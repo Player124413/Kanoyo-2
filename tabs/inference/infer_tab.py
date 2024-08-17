@@ -107,13 +107,11 @@ def infer_tab():
                     interactive=True,
                 )
             
+       with gr.Row():
+            but0 = gr.Button(i18n("Конвертировать"), variant="primary", scale=1)
+            vc_output2 = gr.Audio(label=i18n("Аудио"), scale=3)
         with gr.Row():
             vc_output1 = gr.Textbox(label=i18n("Консоль"), interactive=False)
-            vc_output2 = gr.Audio(
-                label=i18n("Аудио")
-            )
-        with gr.Row():
-            but0 = gr.Button(i18n("Конвертировать"), variant="primary", scale=1)
             
         refresh_button.click(
             fn=change_choices,
